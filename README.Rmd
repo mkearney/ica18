@@ -1,0 +1,76 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# ica18
+
+How to collect [and update] data.
+
+```{r}
+## load rtweet
+library(rtweet)
+
+## read data
+if (file.exists(file.path("data", "ica18.rds"))) {
+  ica_old <- readRDS(file.path("data", "ica18.rds"))
+  sinceid <- ica_old$status_id[order(ica_old$created_at, decreasing = TRUE)[1]]
+} else {
+  sinceid <- NULL
+}
+
+## get ICA18 tweets
+ica <- search_tweets("ica18 OR ica2018", n = 18000, since_id = sinceid)
+
+## merge if updating
+if (exists("ica_old")) {
+  ## merge data
+  ica <- rbind(ica, ica_old)
+  
+  ## rm ica2
+  rm(ica_old)
+
+  ## filter unique data
+  ica <- funique::funique(ica)
+}
+
+## save data set
+saveRDS(ica, file.path("data", "ica18.rds"))
+
+## view data
+ica
+```
+
+
+## Tweet frequency
+
+See the source code [here](time_series.R)
+
+```{r}
+source("time_series.R")
+```
+
+<p align="center"><img width="100%" height="auto" src="ica_frequency.png" /></p>
+
+&nbsp;
+
+## Network analysis
+
+See the source code [here](network_analysis.R)
+
+```{r}
+source("network_analysis.R")
+```
+
+<p align="center"><img width="100%" height="auto" src="ica_network.png" /></p>
+
+&nbsp;
+
