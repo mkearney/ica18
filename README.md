@@ -40,20 +40,20 @@ saveRDS(ica, file.path("data", "ica18.rds"))
 
 ## view data
 ica
-#> # A tibble: 9,950 x 87
+#> # A tibble: 10,214 x 87
 #>    user_id status_id created_at          screen_name text  source display_text_wi… reply_to_status…
 #>    <chr>   <chr>     <dttm>              <chr>       <chr> <chr>             <dbl> <chr>           
-#>  1 119698… 10004134… 2018-05-26 16:28:46 biscottto   RT @… Twitt…             140. <NA>            
-#>  2 163660… 10004132… 2018-05-26 16:27:53 ICD_AEJMC   RT @… Twitt…             140. <NA>            
-#>  3 247370… 10004135… 2018-05-26 16:29:04 ILorscheid  RT @… Twitt…             140. <NA>            
-#>  4 852439… 10004131… 2018-05-26 16:27:46 ankahajkova RT @… Twitt…             139. <NA>            
-#>  5 163660… 10004131… 2018-05-26 16:27:24 ICD_AEJMC   RT @… Twitt…             116. <NA>            
-#>  6 232558… 10004127… 2018-05-26 16:25:52 PaoloBory   RT @… Twitt…             107. <NA>            
-#>  7 286728… 10004128… 2018-05-26 16:26:29 ygnieves    RT @… Twitt…             140. <NA>            
-#>  8 461116… 10004129… 2018-05-26 16:26:54 DCInbox     RT @… Twitt…             140. <NA>            
-#>  9 101038… 10002963… 2018-05-26 08:43:20 lsangalang  RT @… Twitt…             139. <NA>            
-#> 10 101038… 10003904… 2018-05-26 14:57:23 lsangalang  RT @… Twitt…             139. <NA>            
-#> # ... with 9,940 more rows, and 79 more variables: reply_to_user_id <chr>,
+#>  1 389313… 10004695… 2018-05-26 20:11:43 avashley_   Best… Twitt…              29. <NA>            
+#>  2 100448… 10004680… 2018-05-26 20:05:33 lauraolkko… #R2D… Twitt…              90. <NA>            
+#>  3 102678… 10004307… 2018-05-26 17:37:28 judyinthes… the … Twitt…              76. <NA>            
+#>  4 102678… 10004187… 2018-05-26 16:49:56 judyinthes… got … Twitt…              92. <NA>            
+#>  5 102678… 10004433… 2018-05-26 18:27:31 judyinthes… #ica… Twitt…              80. <NA>            
+#>  6 102738… 10004356… 2018-05-26 17:57:07 vivmarshuk  RT @… Twitt…             140. <NA>            
+#>  7 104196… 10004441… 2018-05-26 18:30:42 sjwade6     Wond… Twitt…              73. <NA>            
+#>  8 104589… 10004286… 2018-05-26 17:29:04 UOsojc      RT @… Twitt…             140. <NA>            
+#>  9 104589… 10004285… 2018-05-26 17:28:52 UOsojc      RT @… Twitt…             140. <NA>            
+#> 10 104920… 10004637… 2018-05-26 19:48:41 wishcrys    RT @… Twitt…             140. <NA>            
+#> # ... with 10,204 more rows, and 79 more variables: reply_to_user_id <chr>,
 #> #   reply_to_screen_name <chr>, is_quote <lgl>, is_retweet <lgl>, favorite_count <int>,
 #> #   retweet_count <int>, hashtags <list>, symbols <list>, urls_url <list>, urls_t.co <list>,
 #> #   urls_expanded_url <list>, media_url <list>, media_t.co <list>, media_expanded_url <list>,
