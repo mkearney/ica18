@@ -43,7 +43,7 @@ size <- (log(size) + sqrt(size)) / 4
 size <- size[match(names(size), names(igraph::V(g)))]
 
 ## plot network
-png("ica_network.png", width = 120 * 36, height = 120 * 36, bg = "#f7f7f7")
+png("ica_network.png", width = 120 * 36, height = 120 * 30, bg = "#f7f7f7")
 par(mar = c(12, 6, 15, 6), bg = "#f7f7f7", bg = "#f7f7f7")
 plot(g,
   edge.size = .4,
