@@ -74,3 +74,12 @@ source("network_analysis.R")
 <p align="center"><img width="100%" height="auto" src="ica_network.png" /></p>
 
 &nbsp;
+
+
+
+```{r}
+source("division_hashtags.R")
+```
+
+
+<p align="center"><img width="100%" height="auto" src="ica_divs.png" /></p>
