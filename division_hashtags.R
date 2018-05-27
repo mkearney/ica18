@@ -6,16 +6,32 @@ hashtags <- c("ica_acsj", "ica_cam", "ica_cat", "ica_clp", "ica_his",
   "ica_pol", "ica_pop", "ica_pd", "ica_pr", "ica_sc", "ica_vis", "ica18",
   "ica2018", "ica18_theme", "ica_green", "ica_secac")
 
+## read data
+if (file.exists(file.path("data", "icall.rds"))) {
+  icall_old <- readRDS(file.path("data", "icall.rds"))
+  sinceid <- icall_old$status_id[order(icall_old$created_at, decreasing = TRUE)[1]]
+} else {
+  sinceid <- NULL
+}
+
 ## search for all tweets - pt1
 icall1 <- search_tweets(paste(hashtags[1:18], collapse = " OR "), n = 45000,
-  token = bearer_token())
+  since_id = sinceid, token = bearer_token())
 
 ## search for all tweets - pt2
-icall2 <- search_tweets(paste(hashtags[1:18], collapse = " OR "), n = 45000,
-  token = bearer_token())
+icall2 <- search_tweets(paste(hashtags[19:36], collapse = " OR "), n = 45000,
+  since_id = sinceid, token = bearer_token())
 
 ## merge into icall
-icall <- rbind(icall1, icall2)
+icall <- funique::funique(rbind(icall1, icall2))
+
+## bind with old data
+if (exists("icall_old")) {
+  icall <- funique::funique(rbind(icall, icall_old))
+}
+
+## save
+saveRDS(icall, "data/icall.rds")
 
 ## create dummy codes for each ica hashtag
 for (i in seq_along(hashtags)) {

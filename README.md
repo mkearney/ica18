@@ -40,20 +40,20 @@ saveRDS(ica, file.path("data", "ica18.rds"))
 
 ## view data
 ica
-#> # A tibble: 10,623 x 87
+#> # A tibble: 10,658 x 87
 #>    user_id status_id created_at          screen_name text  source display_text_wi… reply_to_status…
 #>    <chr>   <chr>     <dttm>              <chr>       <chr> <chr>             <dbl> <chr>           
-#>  1 100424… 10005945… 2018-05-27 04:28:28 gwin_gwin   RT @… Twitt…             140. <NA>            
-#>  2 100448… 10006215… 2018-05-27 06:15:42 lauraolkko… #fak… Twitt…             196. <NA>            
-#>  3 100448… 10006236… 2018-05-27 06:24:03 lauraolkko… Defi… Twitt…             166. <NA>            
-#>  4 101038… 10006199… 2018-05-27 06:09:21 lsangalang  Peop… Twitt…             139. <NA>            
-#>  5 101038… 10006230… 2018-05-27 06:21:32 lsangalang  RT @… Twitt…             143. <NA>            
-#>  6 101038… 10006229… 2018-05-27 06:21:17 lsangalang  Expo… Twitt…             203. <NA>            
-#>  7 101038… 10006203… 2018-05-27 06:10:47 lsangalang  And … Twitt…              40. 100061995204966…
-#>  8 101336… 10004911… 2018-05-26 21:37:22 juanmalapro RT @… Twitt…             140. <NA>            
-#>  9 108161… 10006234… 2018-05-27 06:23:14 _HGZ_       RT @… Twitt…             140. <NA>            
-#> 10 108161… 10006233… 2018-05-27 06:22:56 _HGZ_       RT @… Twitt…             140. <NA>            
-#> # ... with 10,613 more rows, and 79 more variables: reply_to_user_id <chr>,
+#>  1 176186… 10006274… 2018-05-27 06:39:00 CatyBC      .@CM… Twitt…              81. <NA>            
+#>  2 148600… 10006268… 2018-05-27 06:36:38 aschrock    RT @… Tweet…             119. <NA>            
+#>  3 154785… 10006266… 2018-05-27 06:36:00 ICA_CAT     Plea… Tweet…              82. <NA>            
+#>  4 185552… 10006264… 2018-05-27 06:35:05 nikospan    RT @… Twitt…             140. <NA>            
+#>  5 189983… 10006264… 2018-05-27 06:35:18 CarolienNi… RT @… Twitt…             144. <NA>            
+#>  6 259832… 10006266… 2018-05-27 06:36:00 boomgaarde… RT @… Twitt…             139. <NA>            
+#>  7 310737… 10006266… 2018-05-27 06:35:59 DrSha       RT @… Twitt…             139. <NA>            
+#>  8 315607… 10006266… 2018-05-27 06:36:00 icahdq      "Nur… Hoots…             195. <NA>            
+#>  9 394285… 10006263… 2018-05-27 06:34:56 scroeser    The … Twitt…             248. 100062550173886…
+#> 10 5165901 10006270… 2018-05-27 06:37:27 Hermida     Time… Twitt…             165. 100062661754537…
+#> # ... with 10,648 more rows, and 79 more variables: reply_to_user_id <chr>,
 #> #   reply_to_screen_name <chr>, is_quote <lgl>, is_retweet <lgl>, favorite_count <int>,
 #> #   retweet_count <int>, hashtags <list>, symbols <list>, urls_url <list>, urls_t.co <list>,
 #> #   urls_expanded_url <list>, media_url <list>, media_t.co <list>, media_expanded_url <list>,
@@ -119,3 +119,9 @@ source("division_hashtags.R")
 #> Finished collecting tweets!
 #> `geom_smooth()` using method = 'loess'
 ```
+
+<p align="center">
+
+<img width="100%" height="auto" src="ica_divs.png" />
+
+</p>
