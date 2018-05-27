@@ -47,9 +47,15 @@ d <- icall %>%
   group_by(hashtag) %>%
   ts_data("3 hours", trim = 1) %>%
   group_by(hashtag) %>%
-  mutate(tot = sum(n))
+  mutate(tot = sum(n)) %>%
+  arrange(-tot)
 
-filter(d, hashtag %in% unique(d$hashtag[d$tot > 40])) %>%
+## identity top 16 most popular division hashtags
+top16 <- unique(d$hashtag)[1:16]
+
+## plot time series for top 16
+d %>%
+  filter(hashtag %in% top16) %>%
   ggplot(aes(x = time, y = n, colour = hashtag)) +
   geom_smooth(span = .25, fill = "transparent") +
   geom_point(alpha = .75) +
@@ -61,3 +67,14 @@ filter(d, hashtag %in% unique(d$hashtag[d$tot > 40])) %>%
     subtitle = "Number of tweets containing division-specific hashtags in 3-hour intervals") +
   ylim(-7.5, NA) +
   ggsave("ica_divs.png", width = 10, height = 7, units = "in")
+
+## hashtag freq counts
+icall %>%
+  filter(created_at > "2018-05-23") %>%
+  select(created_at, status_id, ica_acsj:ica_secac, -ica18, -ica2018) %>%
+  gather(hashtag, true, -created_at, -status_id) %>%
+  filter(true) %>%
+  group_by(hashtag) %>%
+  summarise(n = n()) %>%
+  arrange(-n) %>%
+  readr::write_csv("freq.csv")

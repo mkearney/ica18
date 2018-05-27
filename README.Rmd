@@ -83,3 +83,12 @@ source("division_hashtags.R")
 
 
 <p align="center"><img width="100%" height="auto" src="ica_divs.png" /></p>
+
+
+```{r}
+## read freq table for div hashtags
+icall <- readr::read_csv("freq.csv")
+
+## print freq table
+knitr::kable(icall)
+```

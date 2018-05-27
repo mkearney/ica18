@@ -40,20 +40,20 @@ saveRDS(ica, file.path("data", "ica18.rds"))
 
 ## view data
 ica
-#> # A tibble: 10,658 x 87
+#> # A tibble: 11,084 x 87
 #>    user_id status_id created_at          screen_name text  source display_text_wi… reply_to_status…
 #>    <chr>   <chr>     <dttm>              <chr>       <chr> <chr>             <dbl> <chr>           
-#>  1 176186… 10006274… 2018-05-27 06:39:00 CatyBC      .@CM… Twitt…              81. <NA>            
-#>  2 148600… 10006268… 2018-05-27 06:36:38 aschrock    RT @… Tweet…             119. <NA>            
-#>  3 154785… 10006266… 2018-05-27 06:36:00 ICA_CAT     Plea… Tweet…              82. <NA>            
-#>  4 185552… 10006264… 2018-05-27 06:35:05 nikospan    RT @… Twitt…             140. <NA>            
-#>  5 189983… 10006264… 2018-05-27 06:35:18 CarolienNi… RT @… Twitt…             144. <NA>            
-#>  6 259832… 10006266… 2018-05-27 06:36:00 boomgaarde… RT @… Twitt…             139. <NA>            
-#>  7 310737… 10006266… 2018-05-27 06:35:59 DrSha       RT @… Twitt…             139. <NA>            
-#>  8 315607… 10006266… 2018-05-27 06:36:00 icahdq      "Nur… Hoots…             195. <NA>            
-#>  9 394285… 10006263… 2018-05-27 06:34:56 scroeser    The … Twitt…             248. 100062550173886…
-#> 10 5165901 10006270… 2018-05-27 06:37:27 Hermida     Time… Twitt…             165. 100062661754537…
-#> # ... with 10,648 more rows, and 79 more variables: reply_to_user_id <chr>,
+#>  1 576450… 10006535… 2018-05-27 08:22:50 MichelWalr… Lies… Twitt…             146. <NA>            
+#>  2 983366… 10006536… 2018-05-27 08:23:13 ICASECAC    When… Twitt…             109. <NA>            
+#>  3 104920… 10006534… 2018-05-27 08:22:35 wishcrys    RT @… Twitt…             140. <NA>            
+#>  4 104920… 10006533… 2018-05-27 08:22:09 wishcrys    RT @… Twitt…             140. <NA>            
+#>  5 116016… 10006532… 2018-05-27 08:21:40 poli_com    RT @… Twitt…             140. <NA>            
+#>  6 116016… 10006532… 2018-05-27 08:21:32 poli_com    RT @… Twitt…             140. <NA>            
+#>  7 116016… 10006532… 2018-05-27 08:21:46 poli_com    RT @… Twitt…             144. <NA>            
+#>  8 116016… 10006531… 2018-05-27 08:21:24 poli_com    RT @… Twitt…             140. <NA>            
+#>  9 116016… 10006531… 2018-05-27 08:21:21 poli_com    RT @… Twitt…             108. <NA>            
+#> 10 132089… 10006534… 2018-05-27 08:22:31 FHeinderyc… "The… Tweet…             256. <NA>            
+#> # ... with 11,074 more rows, and 79 more variables: reply_to_user_id <chr>,
 #> #   reply_to_screen_name <chr>, is_quote <lgl>, is_retweet <lgl>, favorite_count <int>,
 #> #   retweet_count <int>, hashtags <list>, symbols <list>, urls_url <list>, urls_t.co <list>,
 #> #   urls_expanded_url <list>, media_url <list>, media_t.co <list>, media_expanded_url <list>,
@@ -125,3 +125,51 @@ source("division_hashtags.R")
 <img width="100%" height="auto" src="ica_divs.png" />
 
 </p>
+
+``` r
+## read freq table for div hashtags
+icall <- readr::read_csv("freq.csv")
+#> Parsed with column specification:
+#> cols(
+#>   hashtag = col_character(),
+#>   n = col_integer()
+#> )
+
+## print freq table
+knitr::kable(icall)
+```
+
+| hashtag    |   n |
+| :--------- | --: |
+| ica\_pol   | 366 |
+| ica\_jsd   | 278 |
+| ica\_cat   | 173 |
+| ica\_gs    | 135 |
+| ica\_cam   | 116 |
+| ica\_lgbtq | 109 |
+| ica\_lsi   |  78 |
+| ica\_pr    |  69 |
+| ica\_acsj  |  43 |
+| ica\_fsd   |  43 |
+| ica\_mob   |  41 |
+| ica\_cm    |  37 |
+| ica\_pd    |  29 |
+| ica\_hc    |  27 |
+| ica\_vis   |  25 |
+| ica\_clp   |  24 |
+| ica\_pop   |  23 |
+| ica\_gcsc  |  20 |
+| ica\_ptc   |  19 |
+| ica\_eric  |  14 |
+| ica\_is    |  12 |
+| ica\_org   |  11 |
+| ica\_mass  |  10 |
+| ica\_icd   |   8 |
+| ica\_idd   |   4 |
+| ica\_mis   |   4 |
+| ica\_csab  |   3 |
+| ica\_env   |   3 |
+| ica\_igc   |   3 |
+| ica\_his   |   1 |
+| ica\_sc    |   1 |
+| ica\_secac |   1 |
